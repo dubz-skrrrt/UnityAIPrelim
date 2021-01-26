@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GhostEnemy
   - Ball
+  - wall
   layers:
   - Default
   - TransparentFX
