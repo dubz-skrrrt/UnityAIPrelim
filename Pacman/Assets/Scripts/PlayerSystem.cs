@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class PlayerSystem : MonoBehaviour
 {
 
+    public AudioSource Chomp;
+
     public Text ScoreUI;
     private int score;
 
@@ -33,6 +35,7 @@ public class PlayerSystem : MonoBehaviour
         // if pacman collides with ball
         if (col.gameObject.tag == "Ball") {
 
+            Chomp.Play();
             score += 100;
             ballcounter++;
             Destroy(col.gameObject);
@@ -49,7 +52,7 @@ public class PlayerSystem : MonoBehaviour
         if (col.gameObject.tag == "Enemy") {
 
             health--;
-            SceneManager.LoadScene("Game2"); // restarts the level
+            //SceneManager.LoadScene("Game2"); // restarts the level
 
             if (health == 0) {
                 
