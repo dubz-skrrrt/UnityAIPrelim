@@ -1482,6 +1482,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovementSpeed: 30
+--- !u!135 &1339814679
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339814673}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.7183897
+  m_Center: {x: 0.0009007454, y: -0.0054860115, z: -0.34307837}
 --- !u!1 &1374777278
 GameObject:
   m_ObjectHideFlags: 0
