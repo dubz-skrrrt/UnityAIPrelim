@@ -20,4 +20,9 @@ public class ScoreMenu : MonoBehaviour
     {
          SceneManager.LoadScene("MainMenu"); // loads MainMenu scene
     }
+
+    public void PlayGame()
+   {
+       SceneManager.LoadScene("PacmanGame");
+   }
 }
