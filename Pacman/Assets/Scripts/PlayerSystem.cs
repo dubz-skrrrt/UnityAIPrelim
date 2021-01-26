@@ -13,11 +13,13 @@ public class PlayerSystem : MonoBehaviour
 
     public Text HealthUI;
     private int health = 3;
+    
+    private int ballcounter = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        ScoreUI.text = "SCORE: " + score;
+        ScoreUI.text = "" + score;
         HealthUI.text = "LIVES: " + health;
     }
 
@@ -32,8 +34,15 @@ public class PlayerSystem : MonoBehaviour
         if (col.gameObject.tag == "Ball") {
 
             score += 100;
+            ballcounter++;
             Destroy(col.gameObject);
-            ScoreUI.text = "SCORE: " + score;
+            ScoreUI.text = "" + score;
+
+            if (ballcounter == 202) { // checks if pacman ate all the balls
+
+                ScoreMenu.scoretextstr = ScoreUI.text; // passes the score to the ScoreMenu scene
+                SceneManager.LoadScene("ScoreMenu");
+            } 
         }
 
         // if pacman collides with enemy
