@@ -21,6 +21,11 @@ public class PlayerSystem : MonoBehaviour
         HealthUI.text = "LIVES: " + health;
     }
 
+    void OnCollisionEnter(Collision col){
+        if (col.gameObject.tag == "wall"){
+            Debug.Log("wallcollider");
+        }
+    }
     void OnTriggerEnter (Collider col) {
 
         // if pacman collides with ball
