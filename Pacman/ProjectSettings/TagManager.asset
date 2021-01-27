@@ -12,6 +12,7 @@ TagManager:
   - UI
   - ScoreText
   - CurrentScore
+  - PowerUpPellets
   layers:
   - Default
   - TransparentFX
