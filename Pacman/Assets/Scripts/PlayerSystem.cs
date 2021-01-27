@@ -67,7 +67,12 @@ public class PlayerSystem : MonoBehaviour
             } 
         }
     }
-
+    IEnumerator PowerUpevent(){
+        yield return new WaitForSeconds(5f);
+        PowerUp = false;
+        this.gameObject.GetComponent<Renderer>().material.color =originalColor;
+        Debug.Log("PowerupFaded");
+    }
     IEnumerator KillEvent(){
         
         PlayerHit.Play();
