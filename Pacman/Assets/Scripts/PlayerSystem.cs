@@ -63,9 +63,6 @@ public class PlayerSystem : MonoBehaviour
                 Debug.Log(PowerUp);
                 //score += 200;
                 GhostEaten = true;
-                // if (GhostEaten == true){
-                //     col.gameObject.transform.position = GameObject.FindGameObjectWithTag("GhostEnemy").GetComponent<EnemyAI>().RespawnPoint;
-                // }
             }else{
                 Debug.Log("hit");
                 health = GameObject.FindGameObjectWithTag("Lives").GetComponent<Lives>().Life -= 1;
