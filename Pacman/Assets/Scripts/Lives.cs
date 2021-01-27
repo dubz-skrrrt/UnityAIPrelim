@@ -7,17 +7,16 @@ public class Lives : MonoBehaviour
     // Start is called before the first frame update
     public int Life = 3;
     public Text healhtext;
-    void Start()
-    {
-        
-        var lives = GameObject.FindGameObjectWithTag("Lives");
-        Debug.Log(Life);
-        DontDestroyOnLoad(lives);
-    }
-
     // Update is called once per frame
     void Update()
     {
+        var lives = GameObject.FindGameObjectWithTag("Lives");
+        Debug.Log(Life);
+        if (Life != 0){
+            DontDestroyOnLoad(lives);
+        }else{
+            Destroy(lives);
+        }
         healhtext = GameObject.FindGameObjectWithTag("HealthText").GetComponent<Text>();
         ChangeText();
         
