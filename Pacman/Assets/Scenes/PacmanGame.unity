@@ -13825,6 +13825,7 @@ GameObject:
   - component: {fileID: 1186112988}
   - component: {fileID: 1186112987}
   - component: {fileID: 1186112986}
+  - component: {fileID: 1186112989}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -13897,6 +13898,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 78.159, y: 0, z: 0}
+--- !u!45 &1186112989
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186112985}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: -6629797300637803691, guid: 10893b5330ab3fc45a3c01dc41d866c4, type: 3}
 --- !u!1 &1201822092
 GameObject:
   m_ObjectHideFlags: 0
@@ -18362,7 +18372,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 667410770}
-  GhostBlanket: {fileID: 0}
+  GhostBlanket:
+  - {fileID: 0}
+  originalColor: []
 --- !u!136 &1582735422
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -20013,7 +20025,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 667410770}
-  GhostBlanket: {fileID: 0}
+  GhostBlanket:
+  - {fileID: 0}
+  originalColor: []
 --- !u!136 &1769988194
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -22088,7 +22102,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 667410770}
-  GhostBlanket: {fileID: 0}
+  GhostBlanket:
+  - {fileID: 0}
+  originalColor: []
 --- !u!136 &1930908165
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -22570,7 +22586,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 667410770}
-  GhostBlanket: {fileID: 0}
+  GhostBlanket:
+  - {fileID: 0}
+  originalColor: []
 --- !u!136 &1981790732
 CapsuleCollider:
   m_ObjectHideFlags: 0
