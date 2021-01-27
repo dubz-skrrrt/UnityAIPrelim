@@ -9,7 +9,7 @@ public class PlayerSystem : MonoBehaviour
 {
 
     public AudioSource Chomp;
-
+    public bool PowerUp;
     public Text ScoreUI;
     private int score;
     public int health;
@@ -32,6 +32,9 @@ public class PlayerSystem : MonoBehaviour
     }
     void OnTriggerEnter (Collider col) {
 
+        if (col.gameObject.tag == "PowerUpPellets"){
+            PowerUp = true;
+        }
         // if pacman collides with ball
         if (col.gameObject.tag == "Ball") {
 
@@ -65,7 +68,7 @@ public class PlayerSystem : MonoBehaviour
 
     IEnumerator KillEvent(){
         
-        yield return new WaitForSeconds(0);
+        yield return new WaitForSeconds(0f);
         Destroy(player);
         
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
