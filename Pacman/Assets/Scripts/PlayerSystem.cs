@@ -42,7 +42,7 @@ public class PlayerSystem : MonoBehaviour
         if (col.gameObject.tag == "Ball") {
 
             Chomp.Play();
-            score += 100;
+            score += 50;
             ballcounter++;
             Destroy(col.gameObject);
             ScoreUI.text = "" + score;
