@@ -12,6 +12,8 @@ TagManager:
   - UI
   - ScoreText
   - CurrentScore
+  - PowerUpPellets
+  - GhostColor
   layers:
   - Default
   - TransparentFX
