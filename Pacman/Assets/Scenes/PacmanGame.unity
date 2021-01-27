@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 11120480}
   m_Layer: 0
   m_Name: PowerPellets
-  m_TagString: Ball
+  m_TagString: PowerUpPellets
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -754,7 +754,7 @@ GameObject:
   - component: {fileID: 78568381}
   m_Layer: 0
   m_Name: PowerPellets
-  m_TagString: Ball
+  m_TagString: PowerUpPellets
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2106,7 +2106,7 @@ GameObject:
   - component: {fileID: 168789930}
   m_Layer: 0
   m_Name: PowerPellets
-  m_TagString: Ball
+  m_TagString: PowerUpPellets
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4166,7 +4166,7 @@ GameObject:
   - component: {fileID: 381911705}
   m_Layer: 0
   m_Name: PowerPellets
-  m_TagString: Ball
+  m_TagString: PowerUpPellets
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9625,6 +9625,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2b4afccde18e2dc4fa29cc9a096c8e2f, type: 2}
+    - target: {fileID: -98764493146485779, guid: eb2d65967a9f09045891998351737fd4, type: 3}
+      propertyPath: m_TagString
+      value: GhostColor
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: eb2d65967a9f09045891998351737fd4, type: 3}
       propertyPath: m_Name
       value: GhostGreen
@@ -10873,6 +10877,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0e9fde6f972e4e941b8a6b5be71c0909, type: 2}
+    - target: {fileID: -98764493146485779, guid: eb2d65967a9f09045891998351737fd4, type: 3}
+      propertyPath: m_TagString
+      value: GhostColor
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: eb2d65967a9f09045891998351737fd4, type: 3}
       propertyPath: m_Name
       value: GhostWhite
@@ -18354,6 +18362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 667410770}
+  GhostBlanket: {fileID: 0}
 --- !u!136 &1582735422
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -20004,6 +20013,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 667410770}
+  GhostBlanket: {fileID: 0}
 --- !u!136 &1769988194
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -20702,6 +20712,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f2767e69cb2b81d479ed884a8013de63, type: 2}
+    - target: {fileID: -98764493146485779, guid: eb2d65967a9f09045891998351737fd4, type: 3}
+      propertyPath: m_TagString
+      value: GhostColor
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: eb2d65967a9f09045891998351737fd4, type: 3}
       propertyPath: m_Name
       value: GhostBlue
@@ -22074,6 +22088,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 667410770}
+  GhostBlanket: {fileID: 0}
 --- !u!136 &1930908165
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -22555,6 +22570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 667410770}
+  GhostBlanket: {fileID: 0}
 --- !u!136 &1981790732
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -23869,6 +23885,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e59223a3cd6522742b952263e6ec3b6e, type: 2}
+    - target: {fileID: -98764493146485779, guid: eb2d65967a9f09045891998351737fd4, type: 3}
+      propertyPath: m_TagString
+      value: GhostColor
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: eb2d65967a9f09045891998351737fd4, type: 3}
       propertyPath: m_Name
       value: GhostPink

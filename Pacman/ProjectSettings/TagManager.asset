@@ -13,6 +13,7 @@ TagManager:
   - ScoreText
   - CurrentScore
   - PowerUpPellets
+  - GhostColor
   layers:
   - Default
   - TransparentFX
