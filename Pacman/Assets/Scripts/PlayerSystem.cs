@@ -11,6 +11,7 @@ public class PlayerSystem : MonoBehaviour
     public AudioSource Chomp;
     public AudioSource PlayerHit;
     public bool PowerUp;
+    public bool complete;
     public Text ScoreUI;
     private int score;
     public int health;
@@ -21,7 +22,6 @@ public class PlayerSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         ScoreUI.text = "" + score;
         player = GameObject.Find("Pacman");
         
@@ -36,12 +36,14 @@ public class PlayerSystem : MonoBehaviour
 
         if (col.gameObject.tag == "PowerUpPellets"){
             PowerUp = true;
+            Destroy(col.gameObject);
+            StartCoroutine(PowerUpevent());
         }
         // if pacman collides with ball
         if (col.gameObject.tag == "Ball") {
 
             Chomp.Play();
-            score += 100;
+            score += 50;
             ballcounter++;
             Destroy(col.gameObject);
             ScoreUI.text = "" + score;
@@ -49,6 +51,7 @@ public class PlayerSystem : MonoBehaviour
             if (ballcounter == 198) { // checks if pacman ate all the balls
 
                 ScoreMenu.scoretextstr = ScoreUI.text; // passes the score to the ScoreMenu scene
+                complete = true;
                 SceneManager.LoadScene("ScoreMenu");
             } 
         }
@@ -67,7 +70,11 @@ public class PlayerSystem : MonoBehaviour
             } 
         }
     }
-
+    IEnumerator PowerUpevent(){
+        yield return new WaitForSeconds(5f);
+        PowerUp = false;
+        Debug.Log("PowerupFaded");
+    }
     IEnumerator KillEvent(){
         
         PlayerHit.Play();
