@@ -35,6 +35,7 @@ public class PlayerSystem : MonoBehaviour
     void OnTriggerEnter (Collider col) {
 
         if (col.gameObject.tag == "PowerUpPellets"){
+            Chomp.Play();
             PowerUp = true;
             Destroy(col.gameObject);
             StartCoroutine(PowerUpevent());
