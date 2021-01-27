@@ -11,6 +11,8 @@ public class PlayerSystem : MonoBehaviour
     public AudioSource Chomp;
     public AudioSource PlayerHit;
     public bool PowerUp;
+
+    private Color originalColor;
     public Text ScoreUI;
     private int score;
     public int health;
@@ -21,7 +23,7 @@ public class PlayerSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        originalColor = this.gameObject.GetComponent<Renderer>().material.color;
         ScoreUI.text = "" + score;
         player = GameObject.Find("Pacman");
         
@@ -36,6 +38,9 @@ public class PlayerSystem : MonoBehaviour
 
         if (col.gameObject.tag == "PowerUpPellets"){
             PowerUp = true;
+            Destroy(col.gameObject);
+            this.gameObject.GetComponent<Renderer>().material.color = Color.red;
+            StartCoroutine(PowerUpevent());
         }
         // if pacman collides with ball
         if (col.gameObject.tag == "Ball") {
