@@ -9,6 +9,7 @@ public class PlayerSystem : MonoBehaviour
 {
 
     public AudioSource Chomp;
+    public AudioSource PlayerHit;
     public bool PowerUp;
     public Text ScoreUI;
     private int score;
@@ -20,7 +21,8 @@ public class PlayerSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ScoreUI.text = "SCORE: " + score;
+        
+        ScoreUI.text = "" + score;
         player = GameObject.Find("Pacman");
         
     }
@@ -42,9 +44,9 @@ public class PlayerSystem : MonoBehaviour
             score += 100;
             ballcounter++;
             Destroy(col.gameObject);
-            ScoreUI.text = "SCORE: " + score;
+            ScoreUI.text = "" + score;
 
-            if (ballcounter == 202) { // checks if pacman ate all the balls
+            if (ballcounter == 198) { // checks if pacman ate all the balls
 
                 ScoreMenu.scoretextstr = ScoreUI.text; // passes the score to the ScoreMenu scene
                 SceneManager.LoadScene("ScoreMenu");
@@ -53,7 +55,7 @@ public class PlayerSystem : MonoBehaviour
 
         // if pacman collides with enemy
         if (col.gameObject.tag == "GhostEnemy") {
-            Debug.Log("hit");
+            
             health = GameObject.FindGameObjectWithTag("Lives").GetComponent<Lives>().Life -= 1;
             //Debug.Log(health);
             
@@ -68,10 +70,15 @@ public class PlayerSystem : MonoBehaviour
 
     IEnumerator KillEvent(){
         
-        yield return new WaitForSeconds(0f);
-        Destroy(player);
+        PlayerHit.Play();
+        Time.timeScale = 0;
+        yield return new WaitForSecondsRealtime(1f);
         
+        Destroy(player);
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
+        
         
         // playerPos = GameObject.Find("RespawnBase").transform.position;
         // Instantiate(player, playerPos, Quaternion.identity);
