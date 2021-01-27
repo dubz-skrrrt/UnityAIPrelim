@@ -7,6 +7,11 @@ TagManager:
   - GhostEnemy
   - Ball
   - wall
+  - Lives
+  - HealthText
+  - UI
+  - ScoreText
+  - CurrentScore
   layers:
   - Default
   - TransparentFX
