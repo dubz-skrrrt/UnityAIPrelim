@@ -11,6 +11,7 @@ public class PlayerSystem : MonoBehaviour
     public AudioSource Chomp;
     public AudioSource PlayerHit;
     public bool PowerUp;
+    public bool complete;
     public Text ScoreUI;
     private int score;
     public int health;
@@ -50,6 +51,7 @@ public class PlayerSystem : MonoBehaviour
             if (ballcounter == 198) { // checks if pacman ate all the balls
 
                 ScoreMenu.scoretextstr = ScoreUI.text; // passes the score to the ScoreMenu scene
+                complete = true;
                 SceneManager.LoadScene("ScoreMenu");
             } 
         }

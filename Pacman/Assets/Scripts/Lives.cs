@@ -11,12 +11,13 @@ public class Lives : MonoBehaviour
     void Update()
     {
         var lives = GameObject.FindGameObjectWithTag("Lives");
-        if (Life != 0){
+        if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerSystem>().complete == true){
+            Destroy(lives);
+        }else if (Life != 0){
             DontDestroyOnLoad(lives);
         }else{
             Destroy(lives);
         }
-        
         healthtext = GameObject.FindGameObjectWithTag("HealthText").GetComponent<Text>();
         ChangeText();
         
