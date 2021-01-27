@@ -12,17 +12,17 @@ public class PlayerSystem : MonoBehaviour
 
     public Text ScoreUI;
     private int score;
-
-    public Text HealthUI;
-    private int health = 3;
-    
+    public int health;
+    private GameObject player;
+    private Vector3 playerPos;
     private int ballcounter = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        ScoreUI.text = "" + score;
-        HealthUI.text = "LIVES: " + health;
+        ScoreUI.text = "SCORE: " + score;
+        player = GameObject.Find("Pacman");
+        
     }
 
     void OnCollisionEnter(Collision col){
@@ -39,7 +39,7 @@ public class PlayerSystem : MonoBehaviour
             score += 100;
             ballcounter++;
             Destroy(col.gameObject);
-            ScoreUI.text = "" + score;
+            ScoreUI.text = "SCORE: " + score;
 
             if (ballcounter == 202) { // checks if pacman ate all the balls
 
@@ -49,17 +49,29 @@ public class PlayerSystem : MonoBehaviour
         }
 
         // if pacman collides with enemy
-        if (col.gameObject.tag == "Enemy") {
-
-            health--;
-            //SceneManager.LoadScene("Game2"); // restarts the level
-
+        if (col.gameObject.tag == "GhostEnemy") {
+            Debug.Log("hit");
+            health = GameObject.FindGameObjectWithTag("Lives").GetComponent<Lives>().Life -= 1;
+            //Debug.Log(health);
+            
+            StartCoroutine(KillEvent());
             if (health == 0) {
                 
                 ScoreMenu.scoretextstr = ScoreUI.text; // passes the score to the ScoreMenu scene
                 SceneManager.LoadScene("ScoreMenu");
             } 
         }
+    }
+
+    IEnumerator KillEvent(){
+        
+        yield return new WaitForSeconds(0);
+        Destroy(player);
+        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        
+        // playerPos = GameObject.Find("RespawnBase").transform.position;
+        // Instantiate(player, playerPos, Quaternion.identity);
     }
 
 }

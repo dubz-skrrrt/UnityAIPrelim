@@ -24,5 +24,6 @@ public class ScoreMenu : MonoBehaviour
     public void PlayGame()
    {
        SceneManager.LoadScene("PacmanGame");
+       GameObject.FindGameObjectWithTag("Lives").GetComponent<Lives>().Life = 3;
    }
 }
